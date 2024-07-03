@@ -25,12 +25,23 @@ const updateTask = async (req, res) => {
       { _id: id },
       { title, isCompleted }
     );
-    if (!updatedTask) return res.sataus(404).json({ msg: "Task not found" });
-    res.status(200).json({ msg: "Task updated successfully" });
+    if (!updatedTask)
+      return res.sataus(404).json({ msg: "Task not found", success: false });
+    res.status(200).json({ msg: "Task updated successfully", success: true });
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
 };
-const deleteTask = async (req, res) => {};
+const deleteTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedTask = await Tasks.findOneAndDelete({ _id: id });
+    if (!deletedTask)
+      return res.sataus(404).json({ msg: "Task not found", success: false });
+    res.status(200).json({ msg: "Task deleted successfully", success: true });
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
+  }
+};
 
 export { getTasks, createTask, updateTask, deleteTask };
