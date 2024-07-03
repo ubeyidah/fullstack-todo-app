@@ -8,6 +8,19 @@ const getTasks = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
+const getTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const task = await Tasks.findOne({ _id: id });
+    if (!task)
+      return res.sataus(404).json({ msg: "Task not found", success: false });
+    res.status(200).json(task);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 const createTask = async (req, res) => {
   try {
     const { title } = req.body;
@@ -44,4 +57,4 @@ const deleteTask = async (req, res) => {
   }
 };
 
-export { getTasks, createTask, updateTask, deleteTask };
+export { getTasks, createTask, updateTask, deleteTask, getTask };
