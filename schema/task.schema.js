@@ -2,11 +2,11 @@ import { Schema, model } from "mongoose";
 
 const taskSchema = new Schema(
   {
-    name: {
+    title: {
       type: String,
       required: [true, "must provide name"],
       trim: true,
-      maxLength: [20, "can not exceed 20 characters"],
+      maxLength: [20, "title can not exceed 20 characters"],
     },
     isCompleted: {
       type: Boolean,
@@ -16,4 +16,4 @@ const taskSchema = new Schema(
   { timestamps: true }
 );
 
-export const UserModel = model("Task", taskSchema);
+export const Tasks = model("Task", taskSchema);
