@@ -4,3 +4,70 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background: linear-gradient(120deg, rgb(94, 148, 187), rgb(87, 39, 146));
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+main {
+  flex: 1;
+  max-width: 560px;
+  padding: 0 10px;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
+  height: 40px;
+  overflow: hidden;
+  padding: 3px;
+}
+
+form .title-input {
+  height: 100%;
+  flex: 1;
+  font-size: 17px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  padding: 0 15px;
+}
+
+form .title-input::placeholder {
+  color: rgba(255, 255, 255, 0.712);
+}
+
+form .add-btn {
+  height: 100%;
+  border-radius: 8px;
+  border: none;
+  padding: 0 25px;
+  font-size: 16px;
+  background: rgb(3, 142, 63);
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.add-btn:hover {
+  opacity: 1;
+}
+
+.add-btn:active {
+  opacity: 0.8;
+  scale: 0.98;
+}
