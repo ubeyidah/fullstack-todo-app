@@ -37,10 +37,8 @@ function renderTasks(tasks) {
   let taskHTML = "";
   tasks.forEach((task) => {
     taskHTML += `
-    <div class="task">
-          <p class="task-title ${task.isCompleted && " strike"}">${
-      task.title
-    }</p>
+    <div class="task ${task.isCompleted ? "strike" : ""}">
+          <p class="task-title ">${task.title}</p>
           <div class="controllers ">
             <a href=${`/client/task.html?taskId=${task._id}`} class="edit-btn btn">
               <svg

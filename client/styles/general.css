@@ -88,7 +88,7 @@ form .add-btn {
   font-size: 17px;
   text-transform: capitalize;
 }
-.task-title .strike {
+.task.strike .task-title {
   text-decoration: line-through;
 }
 
