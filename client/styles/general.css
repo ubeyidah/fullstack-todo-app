@@ -88,6 +88,9 @@ form .add-btn {
   font-size: 17px;
   text-transform: capitalize;
 }
+.task-title .strike {
+  text-decoration: line-through;
+}
 
 .controllers {
   display: flex;
