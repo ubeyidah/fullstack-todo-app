@@ -56,7 +56,9 @@ function renderTasks(tasks) {
                 />
               </svg>
             </button>
-            <button class="delete-btn btn " data-task-id=${task._id}>
+            <button class="delete-btn btn js-delete-btn" data-task-id=${
+              task._id
+            }>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -76,6 +78,13 @@ function renderTasks(tasks) {
   });
 
   document.querySelector(".js-tasks").innerHTML = taskHTML;
+
+  document.querySelectorAll(".js-delete-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const { taskId } = btn.dataset;
+      deleteTask(taskId);
+    });
+  });
 }
 
 async function fetchTasksAndRender() {
@@ -84,6 +93,24 @@ async function fetchTasksAndRender() {
     const tasks = await res.json();
     renderTasks(tasks);
     Tasks = tasks;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function deleteTask(id) {
+  try {
+    const res = await fetch(`${baseUrl}/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    if (data.success) {
+      Tasks = Tasks.filter((task) => task._id !== id);
+      renderTasks(Tasks);
+    }
   } catch (error) {
     console.log(error);
   }
