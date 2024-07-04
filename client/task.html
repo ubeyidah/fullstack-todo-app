@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <link rel="stylesheet" href="./styles/general.css" />
+  </head>
+  <body>
+    <main class="single-task">
+      <div class="header">
+        <a href="/client/index.html">Back</a>
+        <p>2025/23/09</p>
+      </div>
+      <form>
+        <div class="group">
+          <label for="title">Title: </label>
+          <input type="text" id="title" value="example task texts" />
+        </div>
+        <div class="group">
+          <label for="completed">completed: </label>
+          <input type="checkbox" id="completed" />
+        </div>
+        <button type="submit" class="btn">Save</button>
+      </form>
+    </main>
+    <script src="./scripts/task.js"></script>
+  </body>
+</html>
