@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(120deg, rgb(94, 148, 187), rgb(87, 39, 146));
+  background: wheat;
   display: flex;
   min-height: 100vh;
   justify-content: center;
@@ -21,7 +21,7 @@ main {
 
 .title {
   text-align: center;
-  color: white;
+  color: black;
   padding: 20px 0;
 }
 
@@ -29,7 +29,7 @@ form {
   display: flex;
   align-items: center;
   width: 100%;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 10px;
   height: 40px;
   overflow: hidden;
@@ -42,13 +42,9 @@ form .title-input {
   font-size: 17px;
   background-color: transparent;
   border: none;
-  color: white;
+  color: black;
   outline: none;
   padding: 0 15px;
-}
-
-form .title-input::placeholder {
-  color: rgba(255, 255, 255, 0.712);
 }
 
 form .add-btn {
@@ -76,7 +72,7 @@ form .add-btn {
 .tasks {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #636161;
   margin-top: 30px;
 }
 
@@ -84,7 +80,7 @@ form .add-btn {
   display: flex;
   align-items: center;
   padding: 10px 5px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #636161;
 }
 
 .task-title {
@@ -95,15 +91,18 @@ form .add-btn {
 
 .controllers {
   display: flex;
+  gap: 5px;
   align-items: center;
 }
+
 .controllers button {
-  padding: 3px 10px;
+  padding: 8px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: transparent;
-  border: 1px solid #ccc;
-  border-radius: 0;
+  background: #ccc;
+
+  border: none;
+  border-radius: 6px;
 }
